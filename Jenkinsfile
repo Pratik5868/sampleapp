@@ -42,7 +42,7 @@ pipeline {
                 script {
                     sh """
                     kubectl --kubeconfig=${KUBE_CONFIG} set image deployment/sampleapp sampleapp=${IMAGE_NAME}:${IMAGE_TAG} --record || \
-                    kubectl --kubeconfig=${KUBE_CONFIG} apply -f k8s-deploy.yaml
+                    kubectl --kubeconfig=${KUBE_CONFIG} apply -f /root/k8s-deploy.yaml
                     """
                 }
             }
